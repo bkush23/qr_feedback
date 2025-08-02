@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Dashboard</title>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Link to your external stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="app">
+
+        <!-- Header Section -->
+        <header>
+            <nav>
+                <div class="nav-container">
+                    <!-- Company Name / Logo -->
+                    <div class="logo">
+                        <a href="#">Company Name</a>
+                    </div>
+
+                    <!-- Navigation Links & Buttons -->
+                    <div class="nav-links">
+                        <!-- Links for non-logged-in users -->
+                        <div id="guest-links" class="nav-links">
+                            <button id="login-btn" class="button button-login">Login</button>
+                            <button class="button button-signup">Sign Up</button>
+                        </div>
+                        
+                        <!-- Links for logged-in users -->
+                        <div id="user-links" class="hidden nav-links">
+                            <button class="button button-generate">Generate Event</button>
+                             <button id="logout-btn" class="button button-logout">Logout</button>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Main Content: Event List -->
+        <main>
+            <h1>Upcoming Events</h1>
+            
+            <div class="event-list-wrapper">
+                <!-- Scroll Buttons -->
+                <button id="scroll-left-btn" class="scroll-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" /></svg>
+                </button>
+
+                <!-- Horizontal scroll container -->
+                <div class="event-container">
+                    
+                <!-- Event Card: Template -->
+                <div class="event-card">
+                    <!-- Placeholder for an image with a gradient -->
+                    <div class="card-image">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                    </div>
+                    <div class="card-content">
+                        <h3>Event-1</h3>
+                        <p>A brief description of the event goes here.</p>
+                        <button class="button">View Event</button>
+                    </div>
+                </div>
+
+                <!-- You can copy this card to add more events -->
+                <div class="event-card">
+                    <div class="card-image">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                    </div>
+                    <div class="card-content">
+                        <h3>Event-2</h3>
+                        <p>A brief description of the event goes here.</p>
+                        <button class="button">View Event</button>
+                    </div>
+                </div>
+
+                <!-- Third Event Card -->
+                <div class="event-card">
+                    <div class="card-image">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                    </div>
+                    <div class="card-content">
+                        <h3>Event-3</h3>
+                        <p>A brief description of the event goes here.</p>
+                        <button class="button">View Event</button>
+                    </div>
+                </div>
+                </div>
+
+                <button id="scroll-right-btn" class="scroll-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" /></svg>
+                </button>
+            </div>
+        </main>
+
+        <!-- Footer Section -->
+        <footer>
+            <div class="footer-container">
+                <div class="footer-links">
+                    <a href="#">About Us</a>
+                    <a href="#">Contact Us</a>
+                </div>
+                <div>
+                    <p>&copy; 2025 Company Name. Powered by Developer.</p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Link to your external JavaScript file -->
+    <script src="script.js" defer></script>
+
+</body>
+</html>
