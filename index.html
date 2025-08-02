@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Company Form + Website Validator</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<div class="container">
+    <h1>Company Registration</h1>
+    <form id="companyForm">
+        <input type="text" id="company_name" placeholder="Company Name" required />
+        <input type="email" id="company_email" placeholder="Company Email" required />
+        <input type="password" id="company_password" placeholder="Password" required />
+        <input type="text" id="company_contact_no" placeholder="Contact Number" required />
+
+        <select id="company_category" required>
+            <option value="">Select Category</option>
+            <option value="Tech">Tech</option>
+            <option value="Finance">Finance</option>
+            <option value="Healthcare">Healthcare</option>
+            <option value="Education">Education</option>
+            <option value="Retail">Retail</option>
+            <option value="Other">Other</option>
+        </select>
+
+        <textarea id="company_address" placeholder="Company Address" required></textarea>
+        <input type="text" id="company_website" placeholder="https://www.example.com" required />
+
+        <button type="submit">Submit</button>
+    </form>
+    <div id="result"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

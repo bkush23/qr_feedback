@@ -1,29 +1,40 @@
-create database if not exist qr_feedback_company;
-       use qr_feedback_company;
-create table credentials
-(
-    company_name       varchar(255) not null,
-    company_email      varchar(255) not null
-        primary key,
-    company_password   varchar(255) not null,
-    company_contact_no varchar(15)  not null,
-    company_category   varchar(20)  not null,
-    company_address    varchar(255) not null,
-    company_website    varchar(255) not null,
-    constraint credentials_uk
-        unique (company_name, company_website)
-);
+CREATE DATABASE IF NOT EXISTS qr_feedback;
 
-create table company_events
-(
-    company_name       varchar(255) not null,
-    event_name         varchar(255) not null,
-    event_location     varchar(255) not null,
-    event_type         varchar(255) not null,
-    event_is_public    boolean      not null,
-    event_id           varchar(255) not null primary key,
-    event_date         datetime     not null,
-    event_created_date datetime     not null
-);
+USE qr_feedback;
 
-create schema events_feedback;
+CREATE TABLE IF NOT EXISTS `credentials` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `company_name` varchar(255) NOT NULL,
+  `company_email` varchar(255) NOT NULL,
+  `company_password` varchar(255) NOT NULL,
+  `company_contact_no` varchar(15) NOT NULL,
+  `company_category` varchar(20) NOT NULL,
+  `company_address` varchar(255) NOT NULL,
+  `company_website` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `company_email` (`company_email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE IF NOT EXISTS `events` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `company_id` int(11) NOT NULL,
+  `event_name` varchar(255) NOT NULL,
+  `event_date` date NOT NULL,
+  `description` text DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `company_id` (`company_id`),
+  CONSTRAINT `events_ibfk_1` FOREIGN KEY (`company_id`) REFERENCES `credentials` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE IF NOT EXISTS `feedback` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `event_id` int(11) NOT NULL,
+  `rating` int(11) NOT NULL,
+  `comments` text DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  PRIMARY KEY (`id`),
+  KEY `event_id` (`event_id`),
+  CONSTRAINT `feedback_ibfk_1` FOREIGN KEY (`event_id`) REFERENCES `events` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
