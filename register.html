@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register for Event - EventHub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Styles to ensure the form submission works visually -->
+    <style>
+        .hidden {
+            display: none !important;
+        }
+        .success-message {
+            text-align: center;
+        }
+        .success-message h3 {
+            font-size: 1.75rem;
+            color: #16A34A; /* Green color for success */
+            margin-bottom: 0.5rem;
+        }
+        .success-message p {
+            font-size: 1.1rem;
+            color: #374151;
+            margin-bottom: 2rem;
+        }
+        .success-message .card-button {
+            display: inline-block;
+            width: auto;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Site Header -->
+    <header class="site-header">
+        <div class="header-container">
+            <h1 class="site-logo"><a href="index.html">EventHub</a></h1>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#" class="button-login">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <div class="form-container">
+            <h2 class="page-title">Register for Community Meetup</h2>
+            
+            <!-- Registration Form -->
+            <form id="registrationForm" class="registration-form">
+                <p class="form-description">Complete the form below to secure your spot.</p>
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <button type="submit" class="submit-button">Confirm Registration</button>
+            </form>
+
+            <!-- Success Message (Initially Hidden) -->
+            <div id="successMessage" class="success-message hidden">
+                <h3>Thank You!</h3>
+                <p>Your registration is confirmed. We've sent a confirmation to your email address.</p>
+                <a href="index.html" class="card-button">Back to Events</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Site Footer -->
+    <footer class="site-footer">
+        <p>&copy; 2025 EventHub. All Rights Reserved.</p>
+    </footer>
+
+    <!-- JavaScript to handle form submission -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const registrationForm = document.getElementById('registrationForm');
+            const successMessage = document.getElementById('successMessage');
+            const formTitle = document.querySelector('.page-title');
+            const formDescription = document.querySelector('.form-description');
+
+            registrationForm.addEventListener('submit', (event) => {
+                // 1. Prevent the default form submission (which reloads the page)
+                event.preventDefault();
+
+                // 2. Hide the form and its description
+                registrationForm.classList.add('hidden');
+                
+                // Hide the description paragraph specifically
+                const description = registrationForm.querySelector('.form-description');
+                if(description) {
+                    description.classList.add('hidden');
+                }
+                
+                // 3. Change the title and show the success message
+                formTitle.textContent = 'Registration Successful!';
+                successMessage.classList.remove('hidden');
+            });
+        });
+    </script>
+
+</body>
+</html>

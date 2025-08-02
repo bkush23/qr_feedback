@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Event QR Code - EventHub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="header-container">
+            <h1 class="site-logo"><a href="index.html">EventHub</a></h1>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="add-event.html">Add Event</a></li>
+                    <li><a href="#" class="button-login">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="qr-display-container">
+            <h2 id="qr-page-title" class="page-title"></h2>
+            <p>Your unique QR code is ready. Display this at your event for attendees to scan and leave feedback.</p>
+            <div id="qrcode-container"></div>
+            <a id="download-qr-link" href="#" class="card-button">Download QR Code</a>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2025 EventHub. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Scripts for QR code generation -->
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

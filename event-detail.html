@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Details - EventHub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="header-container">
+            <h1 class="site-logo"><a href="index.html">EventHub</a></h1>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#" class="button-login">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="event-detail-container">
+            <!-- Event Image Banner -->
+            <img class="event-detail-image" src="https://placehold.co/1200x600/A9C2C9/31343C?text=Community+Meetup" alt="Community Meetup Banner">
+
+            <!-- Event Info -->
+            <div class="event-detail-info">
+                <div class="event-detail-header">
+                    <h1 class="event-detail-title">Community Meetup</h1>
+                    <button id="generate-qr-btn" class="qr-button">Generate QR Code</button>
+                </div>
+                <div class="event-meta">
+                    <span class="meta-item"><strong>Date:</strong> August 15, 2025</span>
+                    <span class="meta-item"><strong>Time:</strong> 6:00 PM - 9:00 PM</span>
+                    <span class="meta-item"><strong>Location:</strong> City Convention Center</span>
+                </div>
+                <div class="event-description">
+                    <p>Join us for our annual community meetup! This is a fantastic opportunity to network with peers, share ideas, and learn from industry leaders.</p>
+                </div>
+                <a href="register.html" class="card-button">Register Now</a>
+            </div>
+        </div>
+    </main>
+    
+    <div id="qr-modal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <button id="close-modal-btn" class="modal-close-button">&times;</button>
+            <h2>Scan for Feedback</h2>
+            <div id="qrcode-container"></div>
+            <p>Scan this code with your phone to leave feedback for this event.</p>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <p>&copy; 2025 EventHub. All Rights Reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+    <script src="qr-generator.js"></script>
+</body>
+</html>

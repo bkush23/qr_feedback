@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Event - EventHub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="header-container">
+            <h1 class="site-logo"><a href="index.html">EventHub</a></h1>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="add-event.html" class="active">Add Event</a></li>
+                    <li><a href="#" class="button-login">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="form-container">
+            <h2 class="page-title">Create a New Event</h2>
+            <p class="form-description">Fill out the details below to generate a unique feedback QR code for your event.</p>
+            <form id="addEventForm" class="registration-form">
+                <div class="form-group">
+                    <label for="event-title-input">Event Title</label>
+                    <input type="text" id="event-title-input" required>
+                </div>
+                <div class="form-group">
+                    <label for="event-desc-input">Event Description</label>
+                    <textarea id="event-desc-input" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="submit-button">Generate QR Code</button>
+            </form>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2025 EventHub. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Scripts to handle form submission -->
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
